@@ -124,9 +124,9 @@ public class Controller extends JFrame{
 
                 dct[i][j] = ci * cj * sum;
 
-//            create graycolor
-             Color gColor = new Color((int)dct[i][j]<<16 |(int)dct[i][j]<<8 |(int)dct[i][j]|a <<24);
-             grayscaleImage.setRGB(i, j, gColor.getRGB());
+//            create image 
+//              Color gColor = new Color((int)dct[i][j]<<16 |(int)dct[i][j]<<8 |(int)dct[i][j]|a <<24);
+//              grayscaleImage.setRGB(i, j, gColor.getRGB());
 ////                System.out.printf("%d \n", gr);
 
 
@@ -141,13 +141,14 @@ public class Controller extends JFrame{
         }
         System.out.println();
     }
-try{
-     ImageIO.write(grayscaleImage, "jpg", new File(
-                    "C:\\Users\\irene dan yosef\\Documents\\UMN Yosef\\Skripsi\\New folder\\pic\\ZZ3.jpg"));
- } catch (IOException e){
-//        //1000 auto-generated catch block
-        e.printStackTrace();
-    }
+     //save or masukin ke myImageView1
+// try{
+//      ImageIO.write(grayscaleImage, "jpg", new File(
+//                     "C:\\Users\\irene dan yosef\\Documents\\UMN Yosef\\Skripsi\\New folder\\pic\\ZZ3.jpg"));
+//  } catch (IOException e){
+// //        //1000 auto-generated catch block
+//         e.printStackTrace();
+//     }
 
 
 
