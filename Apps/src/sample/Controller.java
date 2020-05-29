@@ -88,13 +88,13 @@ public class Controller extends JFrame{
      BufferedImage grayscaleImage = new BufferedImage(img.getWidth(),
                  img.getHeight(), BufferedImage.TYPE_INT_ARGB);
 
-        double[][] dct = new double[img.getWidth()][img.getHeight()];
+        double[][] dct = new double[img.getHeight()][img.getWidth()];
         double ci, cj, dct1, sum;
      //convert matrix dan grayscall
-        for (int i = 0; i < img.getWidth(); i++) {
-            for (int j = 0; j < img.getHeight(); j++) {
+        for (int i = 0; i < img.getHeight(); i++) {
+            for (int j = 0; j < img.getWidth(); j++) {
                 //get rgb color on each pixel
-                Color c = new Color(img.getRGB(i, j));
+                Color c = new Color(img.getRGB(j, i));
                 int r = c.getRed();
                 int g = c.getGreen();
                 int b = c.getBlue();
@@ -104,23 +104,23 @@ public class Controller extends JFrame{
                 int gr = (r + g + b) / 3;
 
                 //DCT
-                if (i == 0)
-                    ci = 1 / Math.sqrt(img.getWidth());
-                else
-                    ci = Math.sqrt(2) / Math.sqrt(img.getWidth());
-                if (j == 0)
-                    cj = 1 / Math.sqrt(img.getHeight());
-                else
-                    cj = Math.sqrt(2) / Math.sqrt(img.getHeight());
-                sum = 0;
-                for (int k = 0; k < img.getWidth(); k++) {
-                    for (int l = 0; l < img.getHeight(); l++) {
-                        dct1 = gr *
-                                Math.cos((2 * k + 1) * i * pi / (2 * img.getWidth())) *
-                                Math.cos((2 * l + 1) * j * pi / (2 * img.getHeight()));
-                        sum = sum + dct1;
-                    }
-                }
+                 if (i == 0)
+                     ci = 1 / Math.sqrt(img.getHeight());
+                 else
+                     ci = Math.sqrt(2) / Math.sqrt(img.getHeight());
+                 if (j == 0)
+                     cj = 1 / Math.sqrt(img.getWidth());
+                 else
+                     cj = Math.sqrt(2) / Math.sqrt(img.getWidth());
+                 sum = 0;
+                 for (int k = 0; k < img.getHeight(); k++) {
+                     for (int l = 0; l < img.getWidth(); l++) {
+                         dct1 = gr *
+                                 Math.cos((2 * k + 1) * i * pi / (2 * img.getHeight())) *
+                                 Math.cos((2 * l + 1) * j * pi / (2 * img.getWidth()));
+                         sum = sum + dct1;
+                     }
+                 }
 
                 dct[i][j] = ci * cj * sum;
 
@@ -135,8 +135,8 @@ public class Controller extends JFrame{
 
         }
 
-    for (int i = 0; i < img.getWidth(); i++) {
-        for (int j = 0; j < img.getHeight(); j++) {
+    for (int i = 0; i < img.getHeight(); i++) {
+        for (int j = 0; j < img.getWidth(); j++) {
             System.out.printf("%f \t", dct[i][j]);
         }
         System.out.println();
