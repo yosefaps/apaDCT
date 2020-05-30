@@ -85,9 +85,9 @@ public class Controller extends JFrame{
         BufferedImage img = SwingFXUtils.fromFXImage(myImageView.getImage(), null);
 
         //image for grayscalimg
-     BufferedImage grayscaleImage = new BufferedImage(img.getWidth(),
-                 img.getHeight(), BufferedImage.TYPE_INT_ARGB);
-
+//      BufferedImage grayscaleImage = new BufferedImage(img.getWidth(),
+//                  img.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        //matrix dct
         double[][] dct = new double[img.getHeight()][img.getWidth()];
         double ci, cj, dct1, sum;
      //convert matrix dan grayscall
@@ -134,20 +134,22 @@ public class Controller extends JFrame{
 //         System.out.println();
 
         }
-
+//print dct(biar tau hsilnya brp)
     for (int i = 0; i < img.getHeight(); i++) {
         for (int j = 0; j < img.getWidth(); j++) {
             System.out.printf("%f \t", dct[i][j]);
         }
         System.out.println();
     }
+     //balikin grayscale ke rgba lalu image
+     
      //save or masukin ke myImageView1
 //      WritableImage image2 = SwingFXUtils.toFXImage(img, null);
 //             myImageView1.setImage(image2);
 //         System.out.println("end");
      
      
-     
+//COBA COBA  
 // try{
 //      ImageIO.write(grayscaleImage, "jpg", new File(
 //                     "C:\\Users\\irene dan yosef\\Documents\\UMN Yosef\\Skripsi\\New folder\\pic\\ZZ3.jpg"));
@@ -158,6 +160,7 @@ public class Controller extends JFrame{
 
 
 
+//COBA COBA
 //try{
 //        System.out.print(grayscaleImage);
 //        System.out.println();
@@ -177,6 +180,8 @@ public class Controller extends JFrame{
 //    //1000 auto-generated catch block
 //    e.printStackTrace();
 //}
+
+//COBA COBA
 //try{
 //     int xLenght = dct.length;
 //     int yLength = dct[0].length;
@@ -196,6 +201,7 @@ public class Controller extends JFrame{
 //        e.printStackTrace();
 //    }
 
+//COBA COBA
 //     //cobvert 1-d
 //     int width = dct.length;
 //     int height = dct[0].length;
@@ -214,6 +220,7 @@ public class Controller extends JFrame{
 
 
 
+//COBA COBA
 //    try{
 //            ImageIO.write(grayscaleImage, "jpg", new File(
 //             "C:\\Users\\irene dan yosef\\Documents\\UMN Yosef\\Skripsi\\New folder\\pic\\bbv.jpg"));
@@ -230,6 +237,7 @@ public class Controller extends JFrame{
 
  }
 
+//COBA COBA
 // public void keyReleasedProperty(){
 //     boolean isDisabled = myImageView.setVisible();
 //     btnProcess.setDisable(isDisabled);
