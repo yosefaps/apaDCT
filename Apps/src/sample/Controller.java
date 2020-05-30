@@ -142,6 +142,12 @@ public class Controller extends JFrame{
         System.out.println();
     }
      //save or masukin ke myImageView1
+//      WritableImage image2 = SwingFXUtils.toFXImage(img, null);
+//             myImageView1.setImage(image2);
+//         System.out.println("end");
+     
+     
+     
 // try{
 //      ImageIO.write(grayscaleImage, "jpg", new File(
 //                     "C:\\Users\\irene dan yosef\\Documents\\UMN Yosef\\Skripsi\\New folder\\pic\\ZZ3.jpg"));
